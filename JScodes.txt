@@ -1,0 +1,134 @@
+First Question:
+
+function swappingArray()
+{
+arrayToSwap=[1,2,3,4,5,6,7,8];
+var arrlen=arrayToSwap.length;
+if(arrlen%2==0)
+{
+     firstHalf=arrayToSwap.slice(0,arrlen/2);
+     secondHalf=arrayToSwap.slice(arrlen/2,arrlen);
+     swappedArray=secondHalf.concat(firstHalf);
+     return swappedArray;
+}else{
+    console.log("Error");
+}
+  
+}
+console.log(swappingArray());
+
+
+Second Question:
+ 
+function calculator(firstNumber,secondNumber,operator)
+{
+  switch (operator) {
+    case '+':
+      console.log("Addition of "+firstNumber+" & "+secondNumber+" is "+(firstNumber+secondNumber));
+      break;
+    case '-':
+      console.log("Substraction of "+firstNumber+" & "+secondNumber+" is "+(firstNumber-secondNumber));
+      break;
+    case '*':
+      console.log("Multiplication of "+firstNumber+" & "+secondNumber+" is "+(firstNumber*secondNumber));
+      break;
+    case '/':
+      console.log("Division of "+firstNumber+" & "+secondNumber+" is "+(firstNumber/secondNumber));
+      break;
+    default:
+      console.log("Wrong parameters");
+  }
+}
+calculator(1,2,'+');
+calculator(1,2,'-');
+calculator(3,2,'*');
+calculator(1,2,'/');
+
+
+Third Question:
+
+function maxDifference()
+{
+  arr=[1,4,8,5,3,11];
+  let maxDifferenceNumber=0;
+  for(var i=arr.length-1;i>=0;i--)
+  { 
+    var tempDifferenceNumber;
+    tempDifferenceNumber=arr[i]-arr[i-1];
+    if(tempDifferenceNumber>maxDifferenceNumber)
+    {
+      maxDifferenceNumber=tempDifferenceNumber;
+    }
+  }
+  console.log(maxDifferenceNumber);
+}
+maxDifference();
+
+Fourth Question:
+
+function objectInput(employee)
+{
+  console.log("Keys: "+Object.keys(employee));
+  console.log("Values: "+Object.values(employee));
+  console.log("Length:"+Object.keys(employee).length);
+}
+let employee={id:"1",firstName:"Omkar",lastName:"Tambe",department:"QA"}
+objectInput(employee);
+
+
+Fifth Question:
+
+var age=prompt("Enter your age:");
+function isEligibleForVoting(age)
+{
+  var flag = (age>=18)?true:false;
+  if(flag)
+  {
+    console.log("Congratulations!You are eligible for voting.");
+  }else{
+    console.log("Sorry!You are not eligible for voting");
+  }
+}
+isEligibleForVoting(age);
+
+
+Sixth Question:
+
+function displayAddition(add){
+  console.log("Addition is:"+add);
+}
+function additionFunction(no1,no2,callBack){
+  var sum=no1+no2;
+  callBack(sum);
+}
+additionFunction(10,20,displayAddition);
+
+
+Seventh Question:
+
+firstArray=[1,2,3,4,5];
+secondArray=[5,4,1,2,3];
+var flag;
+function compareArrays(array1,array2)
+{ 
+    if(array1.length!=array2.length){
+       return "Not matched";
+    }
+   for(var i=0; i<array1.length; i++){
+      flag=false;
+      for(let j=0; j<array2.length; j++){
+        if(array1[i]==array2[j]){
+            flag=true;
+        }
+      }
+      if(flag==false){
+        return "Not matched";
+        break;
+      }
+   }
+   if(flag==true){
+    return "Matched";
+   }
+}
+console.log(compareArrays(firstArray,secondArray));
+
